@@ -1,0 +1,72 @@
+/*:host {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI" Roboto, Helvetica, "Arial", sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }*/
+  .content {
+ background: url(image/butback.jpeg);
+    display: flex;
+    margin: 32px auto;
+    padding: 0 16px;
+    width: auto;
+    height: 900px;
+    flex-direction: column;
+    align-items: center;
+	background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card {
+        background:rgba(0,0,0,0.3);
+    border-radius: 4px;
+    border: 1px solid yellow;
+    height: 50px;
+    width: 200px;
+    margin: 16px 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+    color: white;
+    font-size: 25pt;
+  }
+  .card-container .card:not(:last-child) {
+    margin-right: 0;
+  }
+  .card.card-small {
+    height: 16px;
+    width: 168px;
+  }
+  .card.card-big {
+      height: 160px;
+      width: 1680px;
+  }
+  .card-container .card:not(.highlight-card) {
+    cursor: pointer;
+  }
+  .card.highlight-card {
+    color: white;
+    font-weight: 6000;
+    font-size: 30pt;
+    border: none;
+    width: auto;
+    min-width: 55%;
+    position: relative;
+  }
+  a,
+  a:visited,
+  a:hover {
+    color: #111111;
+    text-decoration: none;
+  }
+  a:hover {
+    color: yellow;
+  }
