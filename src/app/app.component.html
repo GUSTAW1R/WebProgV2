@@ -9,23 +9,21 @@
 
   <div class="card-container">
 
-    <a class="card" target="_blank" rel="noopener">
+    <a class="card" rel="noopener" routerLink="/home" routerLinkActive="active">
 
       <span>Главная</span>
 
     </a>
-    <a class="card" target="_blank" rel="noopener">
-
+    <a class="card" rel="noopener" routerLink="/transaction" routerLinkActive="active">
       <span>Переводы</span>
-
     </a>
 
-    <a class="card" target="_blank" rel="noopener">
+    <a class="card" rel="noopener" routerLink="/contributions" routerLinkActive="active">
 
       <span>Вклады и счета</span>
 
     </a>
-	<a class="card" target="_blank" rel="noopener">
+	<a class="card" rel="noopener" routerLink="/marketplace" routerLinkActive="active">
 
       <span>Специальные предложения</span>
 
@@ -34,3 +32,4 @@
   </div>
 
 </div>
+<router-outlet></router-outlet>>

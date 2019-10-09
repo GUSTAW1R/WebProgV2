@@ -1,16 +1,51 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LandingComponent } from './landing/landing.component';
+import { TransactionComponent } from './transaction/transaction.component';
+import { MarketplaceComponent } from './marketplace/marketplace.component';
+import { ContributionsComponent } from './contributions/contributions.component';
+
+const appRoutes: Routes = [
+  { 
+    path: 'home', 
+    component: LandingComponent,
+    data: { title: 'Главная' } 
+  },
+  { 
+    path: 'transaction',  
+    component: TransactionComponent,
+    data: { title: 'Переводы' }
+  },
+  { 
+    path: 'contributions',  
+    component: ContributionsComponent,
+    data: { title: 'Вклады и счета' }
+  },
+  { 
+    path: 'marketplace',  
+    component: MarketplaceComponent,
+    data: { title: 'Специальные предложения' }
+  },
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+	LandingComponent,
+    TransactionComponent,
+    MarketplaceComponent,
+    ContributionsComponent
   ],
   imports: [
+  RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    ),
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule	
   ],
   providers: [],
   bootstrap: [AppComponent]
