@@ -13,14 +13,30 @@ import { ToastrModule } from 'ngx-toastr';
 import { ExpensesComponent } from './expenses/expenses.component';
 import { ExpensComponent } from './expenses/expens/expens.component';
 import { ExpensListComponent } from './expenses/expens-list/expens-list.component';
+import { SignUpComponent } from './user/sign-up/sign-up.component';
+import { SignInComponent } from './user/sign-in/sign-in.component';
+import { AuthGuard } from './auth.guard';
+import { UserComponent } from './user/user.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserService } from './user/shared/user.service';
 
 
 const appRoutes: Routes = [
-  { 
-    path: 'home', 
-    component: LandingComponent,
-    data: { title: 'Главная' } 
-  },
+  {
+    path: 'signup', component: UserComponent,
+    children: [{ path: '', component: SignUpComponent }]
+},
+{
+    path: 'login', component: UserComponent,
+    children: [{ path: '', component: SignInComponent }]
+},
+{ path: 'main', component: LandingComponent,canActivate:[AuthGuard] },
+
+  {
+  path: 'home',
+  component: LandingComponent,
+  data: { title: 'Главная' }
+},
   { 
     path: 'transaction',  
     component: TransactionComponent,
@@ -52,7 +68,10 @@ const appRoutes: Routes = [
     ContributionsComponent,
     ExpensesComponent,
     ExpensComponent,
-    ExpensListComponent
+    ExpensListComponent,
+    SignUpComponent,
+    UserComponent,
+    SignInComponent
   ],
   imports: [
   RouterModule.forRoot(
@@ -63,9 +82,9 @@ const appRoutes: Routes = [
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ToastrModule.forRoot()	
+    BrowserAnimationsModule	
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

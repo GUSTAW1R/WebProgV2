@@ -33,6 +33,12 @@
       <span>Затраты</span>
 
     </a>
+    <li class="nav-item active">
+      <a class="nav-link" routerLink="/signup">Вход/Регистрация </a>
+    </li>
+    <a class="card" (click)="Logout()"  ng-show="[AuthGuard]">
+      <span>Выйти из аккаунта</span>
+  </a>
   </div>
 </div>
 <router-outlet></router-outlet>>
