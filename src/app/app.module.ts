@@ -7,6 +7,13 @@ import { LandingComponent } from './landing/landing.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { MarketplaceComponent } from './marketplace/marketplace.component';
 import { ContributionsComponent } from './contributions/contributions.component';
+import { FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { ExpensesComponent } from './expenses/expenses.component';
+import { ExpensComponent } from './expenses/expens/expens.component';
+import { ExpensListComponent } from './expenses/expens-list/expens-list.component';
+
 
 const appRoutes: Routes = [
   { 
@@ -29,6 +36,11 @@ const appRoutes: Routes = [
     component: MarketplaceComponent,
     data: { title: 'Специальные предложения' }
   },
+  { 
+    path: 'expenses',  
+    component: ExpensesComponent,
+    data: { title: 'Затраты' }
+  }
 ];
 
 @NgModule({
@@ -37,7 +49,10 @@ const appRoutes: Routes = [
 	LandingComponent,
     TransactionComponent,
     MarketplaceComponent,
-    ContributionsComponent
+    ContributionsComponent,
+    ExpensesComponent,
+    ExpensComponent,
+    ExpensListComponent
   ],
   imports: [
   RouterModule.forRoot(
@@ -45,7 +60,10 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     ),
     BrowserModule,
-    AppRoutingModule	
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot()	
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,24 @@
+
+      <table class="table table-sm table-hover">
+        <thead style="text-align: center;">
+          <tr>
+            <th>#</th>
+            <th>Name - Category - Date - Sum - Description</th>
+            <th>Upd/Del</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of prods">
+            <td>{{expens.ID}}</td>
+            <td>{{expens.Name}} - {{expens.Category}} - {{expens.Date}} - {{expens.Sum}}- {{expens.Description}}</td>
+            <td>
+              <a class="btn" (click)="showForEdit(expens)">
+                <i class="fa fa-pencil-square-o"></i>
+              </a>
+              <a class="btn text-danger" (click)="onDelete(expens.ID)">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
