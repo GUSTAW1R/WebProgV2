@@ -19,6 +19,9 @@ import { AuthGuard } from './auth.guard';
 import { UserComponent } from './user/user.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserService } from './user/shared/user.service';
+import { FilesComponent } from './files/files.component';
+import { FileSelectDirective } from 'ng2-file-upload';
+import { HttpModule } from '@angular/http'
 
 
 const appRoutes: Routes = [
@@ -57,6 +60,12 @@ const appRoutes: Routes = [
     component: ExpensesComponent,
     data: { roles: ['Admin'] },
     canActivate:[AuthGuard]
+  },
+  { 
+    path: 'files',   
+    component: FilesComponent,
+    canActivate:[AuthGuard], 
+    data: { title: 'Файлы' }  
   }
 ];
 
