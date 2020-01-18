@@ -13,10 +13,33 @@ export class ExpensesComponent implements OnInit {
 
   @ViewChild(ExpensListComponent, {static: false}) list: ExpensListComponent;
 
-  constructor(private expensService: ExpensService, private toastr: ToastrService) { }
+  constructor(private expensService: ExpensService, private toastr: ToastrService) {
+    this.ws.onopen = () => {
+          this.setStatus('ONLINE');
+       this.ws.onmessage = (response) => {
+           this.toastr.success(response.data);
+         this.printMessage(response.data);
+       };
+      };
+   }
 
   ngOnInit() {
     this.resetForm();
+  }
+  private sub = document.getElementById('submit');
+  private ws = new WebSocket('ws://localhost:3000');
+  setStatus(value) {
+    console.log(value)
+  }
+  printMessage(value) {
+  //  this.toastr.success('User login successful');
+    console.log(value);
+  }
+  SendMessage() {
+    console.log("I'm is Admin and i send message!");
+    var te = new TextEncoder();
+    this.ws.send(this.expensService.selectedExpens.Name); 
+    //this.ws.send('isUpgrade');
   }
   resetForm(form?: NgForm) {
     if (form != null)
