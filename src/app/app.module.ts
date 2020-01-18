@@ -10,9 +10,9 @@ import { ContributionsComponent } from './contributions/contributions.component'
 import { FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
-import { ExpensesComponent } from './expenses/expenses.component';
-import { ExpensComponent } from './expenses/expens/expens.component';
-import { ExpensListComponent } from './expenses/expens-list/expens-list.component';
+import { ExpensesComponent } from './products/expenses.component';
+import { ExpensComponent } from './products/expens/expens.component';
+import { ExpensListComponent } from './products/expens-list/expens-list.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { AuthGuard } from './auth.guard';
@@ -53,9 +53,10 @@ const appRoutes: Routes = [
     data: { title: 'Специальные предложения' }
   },
   { 
-    path: 'expenses',  
+    path: 'products',  
     component: ExpensesComponent,
-    data: { title: 'Затраты' }
+    data: { roles: ['Admin'] },
+    canActivate:[AuthGuard]
   }
 ];
 

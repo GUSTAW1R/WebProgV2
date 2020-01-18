@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { NgForm } from '@angular/forms'
-import { ExpensService } from 'src/app/expenses/shared/expens.service'
+import { ExpensService } from 'src/app/products/shared/expens.service'
 import { ToastrService } from 'ngx-toastr';
 import { ExpensListComponent } from './expens-list/expens-list.component';
 
