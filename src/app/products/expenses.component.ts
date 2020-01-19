@@ -25,7 +25,7 @@ export class ExpensesComponent implements OnInit {
       };
    }
 
-  ngOnInit() {
+  ngOnInit() { 
     this.toastr.success("до запроса")
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
     const data: any = {
