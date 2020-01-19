@@ -1,5 +1,5 @@
 {
-  "name": "dyrno4kin-app",
+  "name": "Romanov Product",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -23,12 +23,14 @@
     "@ng-bootstrap/ng-bootstrap": "^5.1.1",
     "angular-websocket": "^2.0.1",
     "bootstrap": "^4.3.1",
+    "express": "^4.17.1",
     "file-saver": "^2.0.2",
     "ng2-file-upload": "^1.4.0",
     "ngx-filesaver": "^8.1.0",
     "ngx-toastr": "^11.2.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
+    "ws": "^7.2.1",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
